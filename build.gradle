@@ -1,9 +1,15 @@
 plugins {
     id 'java-library'
+    id "io.qameta.allure" version "2.9.6"
 }
+Allure {
+
+}
+
 repositories {
     mavenCentral()
 }
+
 dependencies {
     testImplementation (
             "com.codeborne:selenide:5.25.0",
@@ -12,6 +18,7 @@ dependencies {
     testRuntimeOnly ("org.slf4j:slf4j-simple:1.7.29",
             "org.junit.jupiter:junit-jupiter-engine:5.8.1")
 }
+
 test {
     useJUnitPlatform()
 }
