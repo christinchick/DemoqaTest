@@ -25,5 +25,4 @@ public class PracticeFormTests {
         startTestDemoqaRegistrationPage.pressSubmit();
         startTestDemoqaRegistrationPage.checkTestSubmittingForm();
     }
-
 }
