@@ -9,17 +9,9 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static demoqa.RandomExample.getRandomPhone;
 
-public class StartTestDemoqaRegistrationPage {
-    RandomExample randomExample = new RandomExample();
-    Faker faker = new Faker();
-    String firstName = faker.name().firstName();
-    String lastName = faker.name().lastName();
-    String userEmail = faker.internet().emailAddress();
-    String currentAddress = faker.address().city();
-    String setRandomNumber = getRandomPhone(10);
-   public void openPage() {
+public class StartTestDemoqaRegistrationPage extends FakerData{
+       public void openPage() {
        open("https://demoqa.com/automation-practice-form");
        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
    }
@@ -51,8 +43,8 @@ public class StartTestDemoqaRegistrationPage {
         $("#hobbiesWrapper").$(byText("Music")).scrollTo().click();
     }
     public void fileFile() {
-        $("#uploadPicture").uploadFile(new File("src/test/resources/img/1.png"));
-        $("#uploadPicture").uploadFromClasspath("img/1.png");
+        $("#uploadPicture").uploadFile(new File("src/test/resources/1.png"));
+        $("#uploadPicture").uploadFromClasspath("1.png");
     }
     public void selectAddress() {
         $("#currentAddress").setValue(currentAddress);
