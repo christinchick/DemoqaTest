@@ -12,7 +12,7 @@ import static testes.PracticeFormTests.*;
 public class StartTestDemoqaRegistrationPage {
 
        public StartTestDemoqaRegistrationPage openPage() {
-       open("https://demoqa.com/automation-practice-form");
+       open("/automation-practice-form");
        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
        return this;
    }
