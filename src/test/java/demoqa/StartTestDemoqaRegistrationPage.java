@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static testes.PracticeFormTests.*;
 
-public class StartTestDemoqaRegistrationPage {
+public class StartTestDemoqaRegistrationPage extends TestBase {
 
        public StartTestDemoqaRegistrationPage openPage() {
        open("/automation-practice-form");
