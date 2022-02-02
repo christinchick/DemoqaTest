@@ -1,6 +1,7 @@
 package demoqa;
 
 import com.github.javafaker.Faker;
+import testes.PracticeFormTests;
 
 import java.io.File;
 
@@ -9,26 +10,28 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static testes.PracticeFormTests.*;
 
-public class StartTestDemoqaRegistrationPage extends FakerData{
+public class StartTestDemoqaRegistrationPage {
+
        public void openPage() {
        open("https://demoqa.com/automation-practice-form");
        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
    }
-    public void registrationFormTestFirstName() {
-        $("#firstName").setValue(firstName);
+    public void registrationFormTestFirstName(String name) {
+        $("#firstName").setValue(name);
    }
-    public void registrationFormTestLastName() {
-        $("#lastName").setValue(lastName);
+    public void registrationFormTestLastName(String name) {
+        $("#lastName").setValue(name);
     }
     public void setGender(){
         $("#genterWrapper").$(byText("Male")).click();
     }
-    public void setRandomNumber() {
-        $("#userNumber").setValue(setRandomNumber);
+    public void setFakerNumber(String number) {
+        $("#userNumber").setValue(number);
     }
-    public void registrationUserEmail() {
-        $("#userEmail").setValue(userEmail);
+    public void registrationUserEmail(String email) {
+        $("#userEmail").setValue(email);
     }
     public void setDate(String month, String year , String day) {
             $("#dateOfBirthInput").click();
@@ -46,8 +49,8 @@ public class StartTestDemoqaRegistrationPage extends FakerData{
         $("#uploadPicture").uploadFile(new File("src/test/resources/1.png"));
         $("#uploadPicture").uploadFromClasspath("1.png");
     }
-    public void selectAddress() {
-        $("#currentAddress").setValue(currentAddress);
+    public void selectAddress(String address) {
+        $("#currentAddress").setValue(address);
     }
     public void chooseStateAndCity() {
         $("#state").click();
