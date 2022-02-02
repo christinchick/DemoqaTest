@@ -1,8 +1,5 @@
 package demoqa;
 
-import com.github.javafaker.Faker;
-import testes.PracticeFormTests;
-
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
@@ -14,55 +11,67 @@ import static testes.PracticeFormTests.*;
 
 public class StartTestDemoqaRegistrationPage {
 
-       public void openPage() {
+       public StartTestDemoqaRegistrationPage openPage() {
        open("https://demoqa.com/automation-practice-form");
        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+       return this;
    }
-    public void registrationFormTestFirstName(String name) {
+    public StartTestDemoqaRegistrationPage registrationFormTestFirstName(String name) {
         $("#firstName").setValue(name);
+        return this;
    }
-    public void registrationFormTestLastName(String name) {
+    public StartTestDemoqaRegistrationPage registrationFormTestLastName(String name) {
         $("#lastName").setValue(name);
+        return this;
     }
-    public void setGender(){
+    public StartTestDemoqaRegistrationPage setGender(){
         $("#genterWrapper").$(byText("Male")).click();
+        return this;
     }
-    public void setFakerNumber(String number) {
+    public StartTestDemoqaRegistrationPage setFakerNumber(String number) {
         $("#userNumber").setValue(number);
+        return this;
     }
-    public void registrationUserEmail(String email) {
+    public StartTestDemoqaRegistrationPage registrationUserEmail(String email) {
         $("#userEmail").setValue(email);
+        return this;
     }
-    public void setDate(String month, String year , String day) {
+    public StartTestDemoqaRegistrationPage setDate(String month, String year , String day) {
             $("#dateOfBirthInput").click();
             $(".react-datepicker__month-select").selectOption(month);
             $(".react-datepicker__year-select").selectOption(year);
             $(".react-datepicker__day--0" + day + ":not(.react-datepicker__day--outside-month)").click();
+            return this;
     }
-    public void setSubjects() {
+    public StartTestDemoqaRegistrationPage setSubjects() {
         $("#subjectsInput").setValue("Arts").pressEnter().setValue("Chemistry").pressEnter();
+        return this;
     }
-    public void selectHobbies() {
+    public StartTestDemoqaRegistrationPage selectHobbies() {
         $("#hobbiesWrapper").$(byText("Music")).scrollTo().click();
+        return this;
     }
-    public void fileFile() {
+    public StartTestDemoqaRegistrationPage fileFile() {
         $("#uploadPicture").uploadFile(new File("src/test/resources/1.png"));
         $("#uploadPicture").uploadFromClasspath("1.png");
+        return this;
     }
-    public void selectAddress(String address) {
+    public StartTestDemoqaRegistrationPage selectAddress(String address) {
         $("#currentAddress").setValue(address);
+        return this;
     }
-    public void chooseStateAndCity() {
+    public StartTestDemoqaRegistrationPage chooseStateAndCity() {
         $("#state").click();
         $(byText("Haryana")).click();
         $("#city").click();
         $(byText("Karnal")).click();
+        return this;
     }
     public void pressSubmit() {
         $("#submit").click();
    }
 
-    public void checkTestSubmittingForm(){
+    public StartTestDemoqaRegistrationPage checkTestSubmittingForm(){
         $("#example-modal-sizes-title-lg").shouldBe(visible);
         $(".modal-body").shouldHave((text(firstName)),
                 (text(lastName)),
@@ -75,5 +84,6 @@ public class StartTestDemoqaRegistrationPage {
                 (text("1.png")),
                 (text(currentAddress)),
                 (text("Haryana Karnal")));
+                return this;
     }
 }
