@@ -51,11 +51,11 @@ public class StartTestDemoqaRegistrationPage extends TestBase {
         $("#hobbiesWrapper").$(byText("Music")).scrollTo().click();
         return this;
     }
-    public StartTestDemoqaRegistrationPage fileFile() {
-        $("#uploadPicture").uploadFile(new File("src/test/resources/1.png"));
-        $("#uploadPicture").uploadFromClasspath("1.png");
-        return this;
-    }
+   // public StartTestDemoqaRegistrationPage fileFile() {
+    //    $("#uploadPicture").uploadFile(new File("src/test/resources/1.png"));
+      //  $("#uploadPicture").uploadFromClasspath("1.png");
+     //   return this;
+  //  }
     public StartTestDemoqaRegistrationPage selectAddress(String address) {
         $("#currentAddress").setValue(address);
         return this;
@@ -81,7 +81,7 @@ public class StartTestDemoqaRegistrationPage extends TestBase {
                 (text("27 June,1991")),
                 (text("Arts, Chemistry")),
                 (text("Music")),
-                (text("1.png")),
+                //(text("1.png")),
                 (text(currentAddress)),
                 (text("Haryana Karnal")));
                 return this;

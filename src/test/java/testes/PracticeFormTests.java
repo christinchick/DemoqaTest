@@ -2,6 +2,7 @@ package testes;
 
 import com.github.javafaker.Faker;
 import demoqa.StartTestDemoqaRegistrationPage;
+import demoqa.TestBase;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -11,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class PracticeFormTests extends StartTestDemoqaRegistrationPage{
+public class PracticeFormTests extends TestBase {
     StartTestDemoqaRegistrationPage startTestDemoqaRegistrationPage = new StartTestDemoqaRegistrationPage();
     static Faker faker = new Faker();
     public static String firstName = faker.name().firstName(),
@@ -53,9 +54,9 @@ public class PracticeFormTests extends StartTestDemoqaRegistrationPage{
         step("Выбираем Hobbies", () -> {
             startTestDemoqaRegistrationPage.selectHobbies();
         });
-        step("Прикрепляем Picture", () -> {
-            startTestDemoqaRegistrationPage.fileFile();
-        });
+       //  step("Прикрепляем Picture", () -> {
+       //     startTestDemoqaRegistrationPage.fileFile();
+      //  });
         step("Заполняем поле Current Address", () -> {
             startTestDemoqaRegistrationPage.selectAddress(currentAddress);
         });
